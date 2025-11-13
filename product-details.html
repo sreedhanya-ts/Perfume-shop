@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details - Scentiilla</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&family=Playfair+Display:600,700">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+  <!-- Link your CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="product-details.css">
+</head>
+<body>
+
+<!-- Header will load here -->
+<header class="custom-header">
+
+  <!-- ======= Desktop Top Bar ======= -->
+  <div class="top-bar">
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-pinterest"></i></a>
+    </div>
+
+    <div class="header-logo">
+     <p><img src="images/logo1.png" alt="Logo"></p> 
+    </div>
+
+    <div class="header-right">
+      <select class="country-select" style="color: #1a1a1a;">
+        <option>INDIA</option>
+        <option>USA</option>
+        <option>UAE</option>
+      </select>
+
+      <a href="#"><i class="fas fa-user"></i></a>
+      <a href="#"><i class="far fa-heart"></i></a>
+      <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+
+      <div class="search-box" style="border-bottom:1px solid #333;display:inline-flex;align-items:center;">
+        <input type="text" placeholder="Search" style="border:none;outline:none;padding:4px;">
+        <button style="background:none;border:none;cursor:pointer;">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Mobile Top Header ======= -->
+  <div class="mobile-top-header">
+    <button class="mobile-menu-icon" id="mobileMenuIcon">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="header-logo mobile-logo">
+      <img src="images/logo1.png" alt="Logo">
+    </div>
+
+    <div class="mobile-top-icons">
+      <a href="#"><i class="fas fa-search"></i></a>
+      <a href="#" class="cart-link" data-bs-toggle="modal" data-bs-target="#cartModal">
+        <i class="fas fa-shopping-bag"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- ======= Mobile Slide-out Menu ======= -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <h3>MENU</h3>
+      <button class="close-menu" id="closeMenu">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <ul class="mobile-menu-list">
+      <li><a href="#">CONCENTRATED PERFUME</a></li>
+      <li><a href="#">EAU DE PARFUM</a></li>
+      <li><a href="#">COLLECTIONS</a></li>
+      <li><a href="#">ABOUT US</a></li>
+      <li><a href="contact.html">CONTACT US</a></li>
+
+      <!-- Mobile Blog Accordion -->
+      <li class="mobile-accordion">
+        <button class="accordion-toggle">BLOG <i class="fas fa-chevron-down"></i></button>
+        <div class="accordion-content">
+          <div class="accordion-section">
+            <h5>BLOG LAYOUTS</h5>
+            <a href="#">Blog Details</a>
+            <a href="#">Blog Details Sidebar</a>
+            <a href="#">No Sidebar</a>
+          </div>
+
+          <div class="accordion-section">
+            <h5>BLOG PAGES</h5>
+            <a href="#">Author</a>
+            <a href="#">Category</a>
+            <a href="#">Blog Tag</a>
+          </div>
+
+          <div class="accordion-section">
+            <h5>POST FORMATS</h5>
+            <a href="#">Blog Sidebar</a>
+            <a href="#">Blog Fullwidth</a>
+            <a href="#">Gallery Format</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <!-- Country Selector in Mobile Menu -->
+    <div class="mobile-menu-footer">
+      <select class="country-select-mobile">
+        <option>🌍 INDIA</option>
+        <option>🌍 USA</option>
+        <option>🌍 UAE</option>
+      </select>
+    </div>
+  </nav>
+
+  <!-- ======= Mobile Bottom Navigation ======= -->
+  <div class="mobile-bottom-nav mobile-only">
+    <a href="index.html" class="nav-item" data-page="home">
+      <i class="fas fa-home"></i>
+      <span>HOME</span>
+    </a>
+    <a href="#shop" class="nav-item" data-page="shop">
+      <i class="fas fa-shopping-bag"></i>
+      <span>SHOP</span>
+    </a>
+    <a href="#account" class="nav-item" data-page="account">
+      <i class="fas fa-user"></i>
+      <span>ACCOUNT</span>
+    </a>
+    <a href="tel:+1234567890" class="nav-item" data-page="call">
+      <i class="fas fa-phone"></i>
+      <span>CALL</span>
+    </a>
+    <button class="nav-item more-menu" id="mobileMoreMenu">
+      <i class="fas fa-ellipsis-v"></i>
+      <span>MORE</span>
+    </button>
+  </div>
+
+  <!-- ======= Main Navigation (Desktop) ======= -->
+  <nav class="menu-bar">
+    <ul>
+      <li><a href="#">CONCENTRATED PERFUME</a></li>
+      <li><a href="#">EAU DE PARFUM</a></li>
+      <li><a href="#">COLLECTIONS</a></li>
+      <li><a href="about-us.html">ABOUT US</a></li>
+      <li><a href="contact.html">CONTACT US</a></li>
+
+      <!-- BLOG DROPDOWN SECTION -->
+      <li class="dropdown">
+        <a href="#">BLOG <i class="fas fa-angle-down"></i></a>
+        <div class="dropdown-menu">
+
+          <div class="dropdown-column">
+            <h4>BLOG LAYOUTS</h4>
+            <a href="#">Blog Details</a>
+            <a href="#">Blog Details Sidebar</a>
+            <a href="#">No Sidebar</a>
+          </div>
+
+          <div class="dropdown-column">
+            <h4>BLOG PAGES</h4>
+            <a href="#">Author</a>
+            <a href="#">Category</a>
+            <a href="#">Blog Tag</a>
+          </div>
+
+          <div class="dropdown-column">
+            <h4>POST FORMATS</h4>
+            <a href="#">Blog Sidebar</a>
+            <a href="#">Blog Fullwidth</a>
+            <a href="#">Gallery Format</a>
+          </div>
+
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Breadcrumb Navigation -->
+<section class="breadcrumb-section py-3">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Products</a></li>
+        <li class="breadcrumb-item active" id="breadcrumb-product">Product Details</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- Product Details Section -->
+<section class="product-details-section py-5">
+  <div class="container">
+    <div class="row g-5">
+      
+      <!-- Product Image Gallery -->
+      <div class="col-lg-6">
+        <div class="product-gallery">
+          <div class="main-image-wrapper">
+            <img id="mainImage" src="images/product5.png" alt="Product" class="main-image">
+            <div class="image-badge" id="imageBadge">SALE</div>
+          </div>
+
+          <div class="thumbnail-gallery">
+            <div class="thumbnail-item active" onclick="changeMainImage(this)">
+              <img src="images/product5.png" alt="View 1">
+            </div>
+            <div class="thumbnail-item" onclick="changeMainImage(this)">
+              <img src="images/product2.png" alt="View 2">
+            </div>
+            <div class="thumbnail-item" onclick="changeMainImage(this)">
+              <img src="images/product3.png" alt="View 3">
+            </div>
+            <div class="thumbnail-item" onclick="changeMainImage(this)">
+              <img src="images/product4.png" alt="View 4">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Information -->
+      <div class="col-lg-6">
+        <div class="product-info-wrapper">
+          <div class="product-header">
+            <h1 class="product-title" id="productTitle">Essence Luxe</h1>
+            <p class="product-category-detail" id="productCategory">Rose & Vanilla Blend</p>
+          </div>
+
+          <div class="product-rating-section">
+            <div class="rating-stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <span class="rating-count">(128 Reviews)</span>
+            <span class="stock-status in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+          </div>
+
+          <div class="price-section">
+            <span class="price-current" id="productPrice">$89.99</span>
+            <span class="price-original" id="productOriginal">$129.99</span>
+            <span class="discount-badge">-31%</span>
+          </div>
+
+          <div class="product-description">
+            <h5 class="desc-title">Product Description</h5>
+            <p id="productDesc">
+              Essence Luxe is a captivating blend of rose and vanilla that creates an unforgettable olfactory experience. With its sophisticated composition and long-lasting formula, this perfume is perfect for evening occasions and special moments.
+            </p>
+          </div>
+
+          <!-- Specifications -->
+          <div class="specifications-mini">
+            <h5 class="spec-title">Key Features</h5>
+            <ul class="spec-list">
+              <li><i class="fas fa-check"></i> 100ml Bottle</li>
+              <li><i class="fas fa-check"></i> Eau de Parfum (20% Concentration)</li>
+              <li><i class="fas fa-check"></i> Lasting 8-10 Hours</li>
+              <li><i class="fas fa-check"></i> Eco-friendly Packaging</li>
+            </ul>
+          </div>
+
+          <!-- Quantity & Add to Cart -->
+          <div class="cart-actions">
+            <div class="quantity-selector">
+              <label>Quantity:</label>
+              <div class="qty-input">
+                <button class="qty-btn" id="decreaseQty" title="Decrease quantity">−</button>
+                <input type="number" id="quantityInput" value="1" min="1" max="10" readonly>
+                <button class="qty-btn" id="increaseQty" title="Increase quantity">+</button>
+              </div>
+            </div>
+
+            <button class="btn-add-to-cart-lg add-to-cart-btn" id="addToCartBtn" data-product="Essence Luxe" data-price="89.99">
+              <i class="fas fa-shopping-bag"></i> ADD TO CART
+            </button>
+
+            <button class="btn-wishlist" title="Add to Wishlist">
+              <i class="far fa-heart"></i>
+            </button>
+          </div>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="trust-badges-product">
+            <div class="trust-badge-item">
+              <i class="fas fa-shipping-fast"></i>
+              <span>Free Shipping</span>
+            </div>
+            <div class="trust-badge-item">
+              <i class="fas fa-undo"></i>
+              <span>Easy Returns</span>
+            </div>
+            <div class="trust-badge-item">
+              <i class="fas fa-lock"></i>
+              <span>Secure Payment</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Detailed Specifications Section -->
+<section class="detailed-specs py-5" style="background: #1a1a1a;">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <h2 class="section-title">Detailed Specifications</h2>
+      <div class="title-underline"></div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="specs-table">
+          <h5 class="table-title">Product Information</h5>
+          <table>
+            <tr>
+              <td class="spec-label">Product Name</td>
+              <td class="spec-value" id="specName">Essence Luxe</td>
+            </tr>
+            <tr>
+              <td class="spec-label">Category</td>
+              <td class="spec-value" id="specCategory">Eau de Parfum</td>
+            </tr>
+            <tr>
+              <td class="spec-label">Bottle Size</td>
+              <td class="spec-value">100ml</td>
+            </tr>
+            <tr>
+              <td class="spec-label">Fragrance Type</td>
+              <td class="spec-value">Rose & Vanilla</td>
+            </tr>
+            <tr>
+              <td class="spec-label">Concentration</td>
+              <td class="spec-value">20% Fragrance Oils</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="specs-table">
+          <h5 class="table-title">Performance & Packaging</h5>
+          <table>
+            <tr>
+              <td class="spec-label">Longevity</td>
+              <td class="spec-value">8-10 Hours</td>
+            </tr>
+            <tr>
+              <td class="spec-label">Sillage</td>
+              <td class="spec-value">Moderate to Strong</td>
+            </tr>
+            <tr>
+              <td class="spec-label">Best For</td>
+              <td class="spec-value">Evening & Special Occasions</td>
+            </tr>
+            <tr>
+              <td class="spec-label">Packaging Material</td>
+              <td class="spec-value">Recyclable Glass & Paper</td>
+            </tr>
+            <tr>
+              <td class="spec-label">Product Code</td>
+              <td class="spec-value">EL-100-001</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Customer Reviews Section -->
+<section class="reviews-section py-5">
+  <div class="container">
+    <div class="row g-5">
+      <!-- Reviews Summary -->
+      <div class="col-lg-4">
+        <div class="reviews-summary">
+          <h2 class="reviews-title">Customer Reviews</h2>
+          
+          <div class="rating-breakdown">
+            <div class="overall-rating">
+              <span class="rating-number">4.8</span>
+              <span class="rating-max">out of 5</span>
+              <div class="rating-stars mt-2">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+
+            <div class="rating-distribution">
+              <div class="rating-bar">
+                <span class="rating-label">5 Stars</span>
+                <div class="bar-container">
+                  <div class="bar-fill" style="width: 78%;"></div>
+                </div>
+                <span class="rating-percent">78%</span>
+              </div>
+              <div class="rating-bar">
+                <span class="rating-label">4 Stars</span>
+                <div class="bar-container">
+                  <div class="bar-fill" style="width: 15%;"></div>
+                </div>
+                <span class="rating-percent">15%</span>
+              </div>
+              <div class="rating-bar">
+                <span class="rating-label">3 Stars</span>
+                <div class="bar-container">
+                  <div class="bar-fill" style="width: 5%;"></div>
+                </div>
+                <span class="rating-percent">5%</span>
+              </div>
+              <div class="rating-bar">
+                <span class="rating-label">2 Stars</span>
+                <div class="bar-container">
+                  <div class="bar-fill" style="width: 1%;"></div>
+                </div>
+                <span class="rating-percent">1%</span>
+              </div>
+              <div class="rating-bar">
+                <span class="rating-label">1 Star</span>
+                <div class="bar-container">
+                  <div class="bar-fill" style="width: 1%;"></div>
+                </div>
+                <span class="rating-percent">1%</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-write-review">
+            <i class="fas fa-pen"></i> Write a Review
+          </button>
+        </div>
+      </div>
+
+      <!-- Individual Reviews -->
+      <div class="col-lg-8">
+        <div class="reviews-list">
+          <!-- Review 1 -->
+          <div class="review-item">
+            <div class="review-header">
+              <div class="review-user">
+                <div class="user-avatar">SA</div>
+                <div class="user-info">
+                  <h6 class="user-name">Sarah Anderson</h6>
+                  <span class="review-date">Verified Purchase • 2 weeks ago</span>
+                </div>
+              </div>
+              <div class="review-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <h5 class="review-title">Absolutely Stunning!</h5>
+            <p class="review-text">
+              Essence Luxe is truly a masterpiece. The aroma is elegant and sophisticated, with a perfect balance of rose and vanilla. It lasts all day long and receives compliments everywhere I go!
+            </p>
+            <div class="review-actions">
+              <button class="review-helpful"><i class="fas fa-thumbs-up"></i> Helpful (24)</button>
+              <button class="review-unhelpful"><i class="fas fa-thumbs-down"></i> Not Helpful (2)</button>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="review-item">
+            <div class="review-header">
+              <div class="review-user">
+                <div class="user-avatar">JM</div>
+                <div class="user-info">
+                  <h6 class="user-name">James Miller</h6>
+                  <span class="review-date">Verified Purchase • 1 month ago</span>
+                </div>
+              </div>
+              <div class="review-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <h5 class="review-title">Perfect Gift</h5>
+            <p class="review-text">
+              I bought this as a gift for my wife and she absolutely loves it. The packaging is luxurious and the scent is timeless. Great quality for the price!
+            </p>
+            <div class="review-actions">
+              <button class="review-helpful"><i class="fas fa-thumbs-up"></i> Helpful (18)</button>
+              <button class="review-unhelpful"><i class="fas fa-thumbs-down"></i> Not Helpful (1)</button>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-item">
+            <div class="review-header">
+              <div class="review-user">
+                <div class="user-avatar">EM</div>
+                <div class="user-info">
+                  <h6 class="user-name">Emily Roberts</h6>
+                  <span class="review-date">Verified Purchase • 3 weeks ago</span>
+                </div>
+              </div>
+              <div class="review-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+            <h5 class="review-title">Beautiful Fragrance</h5>
+            <p class="review-text">
+              This perfume has become my favorite! It's classy and not too overpowering. The bottle design is also gorgeous. Highly recommend it!
+            </p>
+            <div class="review-actions">
+              <button class="review-helpful"><i class="fas fa-thumbs-up"></i> Helpful (12)</button>
+              <button class="review-unhelpful"><i class="fas fa-thumbs-down"></i> Not Helpful (0)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Related Products Section -->
+<section class="related-products py-5" style="background: #1a1a1a;">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <p class="section-subtitle">You Might Also Like</p>
+      <h2 class="section-title">Related Products</h2>
+      <div class="title-underline"></div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Related Product 1 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="product-card">
+          <div class="product-image-wrapper">
+            <img src="images/product2.png" alt="Velvet Dreams" class="product-image-img" style="width: 100%; height: 250px; object-fit: cover;">
+            <div class="product-overlay">
+              <button class="btn-icon" title="Wishlist"><i class="far fa-heart"></i></button>
+              <button class="btn-icon" title="Quick View"><i class="fas fa-eye"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h5 class="product-name">Velvet Dreams</h5>
+            <p class="product-category">Plum & Amber Notes</p>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(94)</span>
+            </div>
+            <div class="product-price">
+              <span class="price-current">$74.99</span>
+              <span class="price-original">$99.99</span>
+            </div>
+            <button class="btn-add-cart add-to-cart-btn" data-product="Velvet Dreams" data-price="74.99">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Product 2 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="product-card">
+          <div class="product-image-wrapper">
+            <img src="images/product3.png" alt="Fresh Mint" class="product-image-img" style="width: 100%; height: 250px; object-fit: cover;">
+            <div class="product-overlay">
+              <button class="btn-icon" title="Wishlist"><i class="far fa-heart"></i></button>
+              <button class="btn-icon" title="Quick View"><i class="fas fa-eye"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h5 class="product-name">Fresh Mint</h5>
+            <p class="product-category">Eucalyptus & Bergamot</p>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(156)</span>
+            </div>
+            <div class="product-price">
+              <span class="price-current">$69.99</span>
+              <span class="price-original">$89.99</span>
+            </div>
+            <button class="btn-add-cart add-to-cart-btn" data-product="Fresh Mint" data-price="69.99">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Product 3 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="product-card">
+          <div class="product-image-wrapper">
+            <img src="images/product4.png" alt="Cherry Blossom" class="product-image-img" style="width: 100%; height: 250px; object-fit: cover;">
+            <div class="product-overlay">
+              <button class="btn-icon" title="Wishlist"><i class="far fa-heart"></i></button>
+              <button class="btn-icon" title="Quick View"><i class="fas fa-eye"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h5 class="product-name">Cherry Blossom</h5>
+            <p class="product-category">Peach & White Musk</p>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(203)</span>
+            </div>
+            <div class="product-price">
+              <span class="price-current">$94.99</span>
+              <span class="price-original">$139.99</span>
+            </div>
+            <button class="btn-add-cart add-to-cart-btn" data-product="Cherry Blossom" data-price="94.99">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Product 4 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="product-card">
+          <div class="product-image-wrapper">
+            <img src="images/product1.png" alt="Royal Essence" class="product-image-img" style="width: 100%; height: 250px; object-fit: cover;">
+            <div class="product-overlay">
+              <button class="btn-icon" title="Wishlist"><i class="far fa-heart"></i></button>
+              <button class="btn-icon" title="Quick View"><i class="fas fa-eye"></i></button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h5 class="product-name">Royal Essence</h5>
+            <p class="product-category">Jasmine & Sandalwood</p>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(187)</span>
+            </div>
+            <div class="product-price">
+              <span class="price-current">$99.99</span>
+              <span class="price-original">$149.99</span>
+            </div>
+            <button class="btn-add-cart add-to-cart-btn" data-product="Royal Essence" data-price="99.99">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer py-5">
+  <div class="container">
+    <div class="row g-4 mb-5">
+      <div class="col-md-6 col-lg-3">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <h3>SCENTIILLA</h3>
+            <p class="footer-tagline">Luxury Fragrances Since 2010</p>
+          </div>
+          <p class="footer-text">
+            Discover the essence of luxury with our handcrafted perfumes from around the world.
+          </p>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="footer-section">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="#">Shop All Perfumes</a></li>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Gift Sets</a></li>
+            <li><a href="#">Sale</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="footer-section">
+          <h5 class="footer-title">Customer Service</h5>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="footer-section">
+          <h5 class="footer-title">Contact Info</h5>
+          <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> 123 Luxury Lane, Fashion District, NY 10001</p>
+            <p><i class="fas fa-phone"></i> +1 (800) 123-4567</p>
+            <p><i class="fas fa-envelope"></i> support@scentiilla.com</p>
+            <p><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM EST</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="footer-divider">
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Scentiilla Luxury Fragrances. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Settings</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Cart Modal -->
+<div class="modal fade" id="cartModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Shopping Cart</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div id="cart-items"></div>
+        <div id="cart-empty" class="text-center py-4">
+          <p>Your cart is empty</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cart-total">$0.00</span>
+        </div>
+        <button type="button" class="btn-primary-custom">Checkout</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Main JS -->
+<script src="script.js"></script>
+
+<!-- Product Details JS -->
+<script src="product-details.js"></script>
+
+</body>
+</html>
